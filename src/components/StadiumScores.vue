@@ -1,39 +1,50 @@
 <script>
-// CommitChart.js
-import { Bar } from 'vue-chartjs'
+// Stadium Scores Bar Chart
+import { HorizontalBar } from 'vue-chartjs'
+import map from 'lodash/map'
+import GooglePalette from 'google-palette'
 
 export default {
-  extends: Bar,
+  extends: HorizontalBar,
   mounted () {
-    // Overwriting base render method with actual data.
-    this.renderChart({
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-      datasets: [
-        {
-          label: 'GitHub Commits',
-          backgroundColor: '#f87979',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-        }
-      ]
+    this.$http.get('/static/data/stadium_runs.json', {}).then((res) => {
+      let labels = map(res.body, (obj) => { return obj.Stadium_Name })
+      let data = map(res.body, (obj) => { return obj.Average })
+      let renderData = {
+        labels: labels,
+        datasets: [
+          {
+            backgroundColor: map(GooglePalette('tol-rainbow', res.body.length), color => '#' + color),
+            data: data
+          }
+        ]
+      }
+      let renderOptions = {
+        scales: {
+          xAxes: [ {
+            ticks: {
+              stepSize: 1,
+              min: 0,
+              display: false,
+              autoSkip: false
+            },
+            categoryPercentage: 0.9,
+            barPercentage: 1
+          }]
+        },
+        legend: {
+          display: false
+        },
+        responsive: true,
+        maintainAspectRatio: false
+      }
+      // Overwriting base render method with actual data.
+      this.renderChart(renderData, renderOptions)
+    }, () => {
+      console.error('Error Loading Stadium Runs Data')
     })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

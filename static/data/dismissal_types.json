@@ -1,0 +1,38 @@
+[
+  {
+    "Dismissal_Type": "Caught",
+    "Count": 3245
+  },
+  {
+    "Dismissal_Type": "Bowled",
+    "Count": 1028
+  },
+  {
+    "Dismissal_Type": "Run-Out",
+    "Count": 583
+  },
+  {
+    "Dismissal_Type": "LBW",
+    "Count": 326
+  },
+  {
+    "Dismissal_Type": "Stumped",
+    "Count": 187
+  },
+  {
+    "Dismissal_Type": "Caught and Bowled",
+    "Count": 148
+  },
+  {
+    "Dismissal_Type": "Retired Hurt",
+    "Count": 8
+  },
+  {
+    "Dismissal_Type": "Hit Wicket",
+    "Count": 6
+  },
+  {
+    "Dismissal_Type": "Obstructing the Field",
+    "Count": 1
+  }
+]
