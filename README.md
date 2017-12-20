@@ -20,8 +20,9 @@ With the design I aimed to provide an eye-catching, easy-to-digest and platform-
 
 ### Performance
 
-The performance of this application was designed for minimal percieved load time. The charts all load within 800 ms.
-![](placeholder.jpg)
+The performance of this application was designed for minimal perceived load time. The charts all load within 800 ms.
+![Performance Screenshot 1](https://raw.githubusercontent.com/armaanahluwalia/IPL-Dashboard/master/static/img/performance1.png)
+![Performance Screenshot 2](https://raw.githubusercontent.com/armaanahluwalia/IPL-Dashboard/master/static/img/performance2.png)
 
 ### Libraries and Plugins Used
 #### Vue.js / Webpack.js / Vue.js PWA Boilerplate
