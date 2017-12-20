@@ -1,14 +1,22 @@
 <template>
   <div class="container">
     <scrollactive class="nav" :offset="80" :duration="800">
-      <a href="#chart-1" class="scrollactive-item chart-nav-item"><img src="/static/img/icons/cricket-player-with-bat.svg" class="chart-nav-icon" /></a>
-      <a href="#chart-2" class="scrollactive-item chart-nav-item"><img src="/static/img/icons/stumps.svg" class="chart-nav-icon" /></a>
-      <a href="#chart-3" class="scrollactive-item chart-nav-item"><img src="/static/img/icons/ball.svg" class="chart-nav-icon" /></a>
-      <a href="#chart-4" class="scrollactive-item chart-nav-item"><img src="/static/img/icons/catch.svg" class="chart-nav-icon" /></a>
+      <a href="#chart-1" class="scrollactive-item chart-nav-item">
+        <svgicon name="cricket-player-with-bat" class="chart-nav-icon" color="#a83b7a"></svgicon>
+      </a>
+      <a href="#chart-2" class="scrollactive-item chart-nav-item">
+        <svgicon name="stumps" class="chart-nav-icon" color="#a83b7a"></svgicon>
+      </a>
+      <a href="#chart-3" class="scrollactive-item chart-nav-item">
+        <svgicon name="ball" class="chart-nav-icon" color="#a83b7a"></svgicon>
+      </a>
+      <a href="#chart-4" class="scrollactive-item chart-nav-item">
+        <svgicon name="catch" class="chart-nav-icon" color="#a83b7a"></svgicon>
+      </a>
     </scrollactive>
     <div class="stadium-scores-wrapper chart-wrapper" id="chart-1">
       <div class="chart-title">
-        <img src="/static/img/icons/cricket-player-with-bat.svg" class="chart-icon" />
+        <svgicon name="cricket-player-with-bat" class="chart-icon" color="#a83b7a"></svgicon>
         <h1>Highest Scoring <br>Pitches</h1>
       </div>
       <div class="chart-container">
@@ -20,7 +28,7 @@
     <div class="dismissal-types-wrapper chart-wrapper" id="chart-2">
       <div class="chart-title">
         <h1>Dismissal Distribution</h1>
-        <img src="/static/img/icons/stumps.svg" class="chart-icon" />
+        <svgicon name="stumps" class="chart-icon" color="#a83b7a"></svgicon>
       </div>
       <div class="chart-container">
         <dismissal-types :height="550"></dismissal-types>
@@ -29,7 +37,7 @@
     </div>
     <div class="sloppiest-teams-wrapper chart-wrapper" id="chart-3">
       <div class="chart-title">
-        <img src="/static/img/icons/ball.svg" class="chart-icon" />
+        <svgicon name="ball" class="chart-icon" color="#a83b7a"></svgicon>
         <h1>Sloppiest Bowling</h1>
       </div>
       <div class="chart-container">
@@ -41,7 +49,7 @@
     <div class="best-fielders-wrapper chart-wrapper" id="chart-4">
       <div class="chart-title">
         <h1>Top Fielders</h1>
-        <img src="/static/img/icons/catch.svg" class="chart-icon" />
+        <svgicon name="catch" class="chart-icon" color="#a83b7a"></svgicon>
       </div>
       <div class="chart-container">
         <h3>Non Wicket-Keepers</h3>
@@ -56,6 +64,7 @@
 </template>
 
 <script>
+  import '../icons'
   import StadiumScores from './StadiumScores'
   import DismissalTypes from './DismissalTypes'
   import SloppiestTeams from './SloppiestTeams'
@@ -117,7 +126,7 @@ h1 {
   margin: 7% 0;
 }
 .chart-icon {
-  width: 8%;
+  width: 8% !important;
   margin: auto;
   border: 6px solid #a83b7a;
   padding: 3%;
